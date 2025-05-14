@@ -1,8 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <link rel="stylesheet" href='~/site.css'>
+</head>
+
+<body class = "Index">
+<section>
+    <h1>¡Bienvenido!</h1>
+    <p>Esta es la pagina de los 10 discos de musica.</p>
+    <p>¿Estan listos??</p>
+    <p>3 2 1 ya </p>
+    
+
+@foreach (Disco disco1 in @ViewBag.Discos.Values)
+{
+    <div>
+        <h2>@disco1.nombre</h2>
+        <img src="@disco1.foto" alt="Logo">
+        <a href="@Url.Action("DiscoInfo", "Home", new { nombre = disco1.nombre })">Ir a disco</a>  
+    </div>
+}
+</section>      
+</body> 
+

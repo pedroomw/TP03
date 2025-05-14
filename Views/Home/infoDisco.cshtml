@@ -1,0 +1,24 @@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body class = "Info">
+<section>
+<div>
+<img src="@ViewBag.foto" alt="Cover">
+</div>
+
+<h3>@ViewBag.nombre:</h3>
+
+@foreach (Cancion cancion in @ViewBag.Canciones)
+    {
+    <div2>
+    <h2>@cancion.nombre</h2>
+    <h3>@cancion.duracionSegundos</h3>
+    </div2>
+    }
+
+</section>
+<a href= '@Url.Action("Index", "Home")'>Inicio</a>
+</body>
